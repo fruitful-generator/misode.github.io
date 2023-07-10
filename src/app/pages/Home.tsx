@@ -50,10 +50,9 @@ export function Home({}: Props) {
 function PopularGenerators() {
 	const { locale } = useLocale()
 	return <ToolGroup title={locale('generators.popular')} link="/generators/">
-		<GeneratorCard minimal id="loot_table" />
-		<GeneratorCard minimal id="advancement" />
+		<GeneratorCard minimal id="lychee_recipe" />
+		<GeneratorCard minimal id="recipe" />
 		<GeneratorCard minimal id="predicate" />
-		<ToolCard title={locale('worldgen')} link="/worldgen/" titleIcon="worldgen" />
 		<ToolCard title={locale('generators.all')} link="/generators/" titleIcon="arrow_right" />
 	</ToolGroup>
 }

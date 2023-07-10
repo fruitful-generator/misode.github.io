@@ -135,6 +135,15 @@
       "schema": "recipe"
     },
     {
+      "id": "lychee_recipe",
+      "url": "lychee-recipe",
+      "path": "recipes",
+      "schema": "lychee_recipe",
+      "partner": "lychee",
+      "minVersion": "1.19",
+      "maxVersion": "1.19"
+    },
+    {
       "id": "text_component",
       "url": "text-component",
       "schema": "text_component",
