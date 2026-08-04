@@ -551,14 +551,13 @@ dispatch lychee:actions[explode] to struct {
 	#[since="26.1"]
 	offset?: [float] @ 3,
 	/// Explosion radius.
-	#[until="26.1"]
-	radius?: float @ 0..,
+	radius?: (
+		#[until="26.1"] float @ 0.. |
+		#[since="26.1"] LevelBasedValue |
+	),
 	/// Explosion radius step.
 	#[until="26.1"]
 	radius_step?: float,
-	/// Explosion radius.
-	#[since="26.1"]
-	radius?: LevelBasedValue,
 	/// Whether to create fire. Defaults to false.
 	#[until="26.1"]
 	fire?: boolean,
@@ -566,11 +565,10 @@ dispatch lychee:actions[explode] to struct {
 	#[since="26.1"]
 	create_fire?: boolean,
 	/// Whether the explosion has special effects on blocks.
-	#[until="26.1"]
-	block_interaction?: ("none" | "keep" | "destroy" | "break" | "destroy_with_decay"),
-	/// Whether the explosion has special effects on blocks.
-	#[since="26.1"]
-	block_interaction?: BlockInteraction,
+	block_interaction?: (
+		#[until="26.1"] ("none" | "keep" | "destroy" | "break" | "destroy_with_decay") |
+		#[since="26.1"] BlockInteraction |
+	),
 	/// Small particle type. Defaults to "minecraft:explosion".
 	#[since="26.1"]
 	small_particle?: Particle,
@@ -843,7 +841,7 @@ dispatch lychee:recipes[lychee:sculk_spreading] to struct {
 	/// The block being consumed by sculk spread.
 	block_in: LycheeBlockPredicate,
 	/// The sculk charge value to be consumed.
-	charge?: int | IntProvider,
+	charge?: (int | IntProvider<int>),
 }
 
 #[since="26.1"]
